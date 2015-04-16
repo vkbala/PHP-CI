@@ -47,13 +47,11 @@
         </apply>
     </target>
 
-    <target name="phploc" description="Measure project size using PHPLOC">
-        <exec executable="phploc">
+    <target name="phploc" description="Generate phploc.csv">
+        <exec executable="phploc${script-suffix}">
             <arg value="--log-csv" />
             <arg value="${basedir}/build/logs/phploc.csv" />
-            <arg value="--log-xml" />
-            <arg value="${basedir}/build/logs/phploc.xml" />
-            <arg path="${basedir}/src" />
+            <arg path="${source}" />
         </exec>
     </target>
 
