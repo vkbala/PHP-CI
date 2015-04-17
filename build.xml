@@ -47,14 +47,6 @@
         </apply>
     </target>
 
-    <target name="phploc" description="Generate phploc.csv">
-        <exec executable="phploc${script-suffix}">
-            <arg value="--log-csv" />
-            <arg value="${basedir}/build/logs/phploc.csv" />
-            <arg path="${source}" />
-        </exec>
-    </target>
-
     <target name="pdepend" description="Calculate software metrics using PHP_Depend">
         <exec executable="pdepend">
             <arg value="--jdepend-xml=${basedir}/build/logs/jdepend.xml" />
