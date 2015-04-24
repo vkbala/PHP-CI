@@ -109,16 +109,7 @@
         <exec executable="phpdox">
             <arg line="--file ${basedir}/jenkins/phpdox.xml" />
         </exec>
-    </target>
-
-    <!-- target name="phpunit" description="Run unit tests using PHPUnit and generates junit.xml and clover.xml">
-        <exec executable="phpunit" failonerror="true">
-            <arg line="--configuration ${basedir}/src/protected/tests/phpunit.xml" />
-            <arg line="--log-junit ${basedir}/build/logs/junit.xml" />
-            <arg line="--coverage-clover ${basedir}/build/logs/clover.xml" />
-            <arg line="${basedir}/src/protected/tests/unit" />
-        </exec>
-    </target -->	
+    </target>	
 	
     <target name="phpunit" description="Run unit tests using PHPUnit and generates junit.xml and clover.xml">
         <exec executable="phpunit${script-suffix}" failonerror="true">
