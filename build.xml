@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="PHP-CI Test" default="build">
+<project name="PHP-CI Test" default="build" basedir=".">
+
+ <condition property="script-suffix" value=".bat" else="">
+   <os family="windows" />
+ </condition>
+ 
     <target name="build"
             depends="phpunit"/>
 
@@ -106,12 +111,22 @@
         </exec>
     </target>
 
-    <target name="phpunit" description="Run unit tests using PHPUnit and generates junit.xml and clover.xml">
+    <!-- target name="phpunit" description="Run unit tests using PHPUnit and generates junit.xml and clover.xml">
         <exec executable="phpunit" failonerror="true">
             <arg line="--configuration ${basedir}/src/protected/tests/phpunit.xml" />
             <arg line="--log-junit ${basedir}/build/logs/junit.xml" />
             <arg line="--coverage-clover ${basedir}/build/logs/clover.xml" />
             <arg line="${basedir}/src/protected/tests/unit" />
+        </exec>
+    </target -->	
+	
+    <target name="phpunit" description="Run unit tests using PHPUnit and generates junit.xml and clover.xml">
+        <exec executable="phpunit${script-suffix}" failonerror="true">
+		   <arg value="-c" />
+		   <arg path="${basedir}/build/phpunit.xml" />
+		   <arg value="-d" />
+		   <arg value="memory_limit=1024M" />
+		   <arg path="${source}" />
         </exec>
     </target>
 </project>
