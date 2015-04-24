@@ -114,7 +114,7 @@
     <target name="phpunit" description="Run unit tests using PHPUnit and generates junit.xml and clover.xml">
         <exec executable="phpunit${script-suffix}" failonerror="true">
 		   <arg value="-c" />
-		   <arg path="${basedir}/build/phpunit.xml" />
+		   <arg path="${basedir}/jenkins/phpunit.xml" />
 		   <arg value="-d" />
 		   <arg value="memory_limit=1024M" />
 		   <arg path="${source}" />
