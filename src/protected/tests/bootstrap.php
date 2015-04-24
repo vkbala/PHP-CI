@@ -1,7 +1,7 @@
 <?php
 
 // change the following paths if necessary
-$yiit='/var/www/yii/framework/yiit.php';
+$yiit='/src/framework/yiit.php';
 $config=dirname(__FILE__).'/../config/test.php';
 
 require_once($yiit);
