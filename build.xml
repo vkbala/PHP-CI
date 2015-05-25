@@ -7,10 +7,10 @@
  </condition>
  
     <target name="build"
-            depends="phpunit"/>
+            depends="prepare,lint,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpdox,phpunit"/>
 
     <target name="build-parallel"
-            depends="phpunit"/>
+            depends="prepare,lint,tools-parallel,phpunit"/>
 
     <target name="tools-parallel" description="Run tools in parallel">
         <parallel threadCount="2">
