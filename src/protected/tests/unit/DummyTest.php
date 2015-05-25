@@ -9,6 +9,6 @@ class DummyTest extends CTestCase
 {
     public function testTrue()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 }
